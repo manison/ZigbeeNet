@@ -29,6 +29,8 @@ using ZigBeeNet.ZDO.Command;
 using ZigBeeNet.ZDO.Field;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Debug;
+using ZigBeeNet.Tranport.Net;
+using System.Net;
 
 #if USE_SERILOG            
     using Serilog;
@@ -152,7 +154,11 @@ namespace ZigBeeNet.PlayGround
                     }
                 }
 
-                ZigBeeSerialPort zigbeePort = new ZigBeeSerialPort(port, baudrate, flowControl);
+                var zigbeePort = CreatePort(port, baudrate, flowControl);
+                if (zigbeePort == null)
+                {
+                    return;
+                }
 
                 IZigBeeTransportTransmit dongle;
                 switch (zigBeeDongle)
@@ -592,6 +598,16 @@ namespace ZigBeeNet.PlayGround
         {
             Console.WriteLine("Options:");
             options.WriteOptionDescriptions(Console.Out);
+        }
+
+        static IZigBeePort CreatePort(string port, int baudrate, FlowControl flowControl)
+        {
+            if (Uri.TryCreate(port, UriKind.Absolute, out var uri) && uri.Scheme == "tcp")
+            {
+                return new ZigBeeTcpPort(new IPEndPoint(IPAddress.Parse(uri.Host), uri.Port));
+            }
+
+            return new ZigBeeSerialPort(port, baudrate, flowControl);
         }
     }
 

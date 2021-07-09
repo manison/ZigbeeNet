@@ -42,6 +42,7 @@
     <ProjectReference Include="..\..\libraries\ZigbeeNet.Hardware.Ember\ZigbeeNet.Hardware.Ember.csproj" />
     <ProjectReference Include="..\..\libraries\ZigBeeNet.Hardware.TI.CC2531\ZigBeeNet.Hardware.TI.CC2531.csproj" />
     <ProjectReference Include="..\..\libraries\ZigBeeNet.Transport.SerialPort\ZigBeeNet.Transport.SerialPort.csproj" />
+    <ProjectReference Include="..\..\libraries\ZigBeeNet.Transport.Tcp\ZigBeeNet.Transport.Tcp.csproj" />
     <ProjectReference Include="..\..\libraries\ZigBeeNet\ZigBeeNet.csproj" />
     <ProjectReference Include="..\..\libraries\ZigbeeNet.Hardware.ConBee\ZigbeeNet.Hardware.ConBee.csproj" />
     <ProjectReference Include="..\..\libraries\ZigBeeNet.DataStore.MongoDb\ZigBeeNet.DataStore.MongoDb.csproj" />

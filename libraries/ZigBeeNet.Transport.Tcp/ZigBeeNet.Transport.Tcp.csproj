@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>ZigBeeNet Contributors</Authors>
+    <Version>1.0.0</Version>
+    <Company>ZigBeeNet</Company>
+    <Description>This package contains a TCP implementation for connecting, reading and sending packages with the ZigBee Hardware dongles</Description>
+    <PackageLicenseExpression>EPL-1.0</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/zigbeenet/ZigbeeNet</PackageProjectUrl>
+    <PackageIconUrl>https://github.com/zigbeenet/ZigbeeNet/blob/master/icon.png?raw=true</PackageIconUrl>
+    <RepositoryUrl>https://github.com/zigbeenet/ZigbeeNet</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>TCP;zigbee;netstandard;smart home;cc2531;XBee;philips hue;ikea tradfri;innr</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ZigBeeNet\ZigBeeNet.csproj" />
+  </ItemGroup>
+
+</Project>
